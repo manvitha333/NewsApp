@@ -14,8 +14,6 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Simulating registration process
     setTimeout(() => {
       alert("Registration successful! Redirecting to Sign In...");
       router.push("/signin");
@@ -33,43 +31,40 @@ const Register = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email Input */}
-          <div className="text-left">
-            <label className="block text-sm">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full mt-1 p-2 bg-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-              required
-            />
-          </div>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            aria-label="Email"
+            className="w-full p-2 bg-gray-900 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-500"
+            required
+          />
 
           {/* Username Input */}
-          <div className="text-left">
-            <label className="block text-sm">Username</label>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              className="w-full mt-1 p-2 bg-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-              required
-            />
-          </div>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            placeholder="Username"
+            aria-label="Username"
+            className="w-full p-2 bg-gray-900 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-500"
+            required
+          />
 
           {/* Password Input */}
-          <div className="text-left">
-            <label className="block text-sm">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="w-full mt-1 p-2 bg-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-              required
-            />
-          </div>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Password"
+            aria-label="Password"
+            className="w-full p-2 bg-gray-900 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-500"
+            required
+          />
 
           {/* Register Button */}
           <button

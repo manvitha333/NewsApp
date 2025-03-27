@@ -1,20 +1,20 @@
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import "./globals.css"; // ✅ Import global CSS file
+import PropTypes from "prop-types"; // ✅ Import PropTypes
+import "./globals.css";
 
 export default function RootLayout({ children }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Run only on client-side
     if (typeof window !== "undefined") {
       const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
       if (!isAuthenticated) {
         router.push("/signin");
       }
     }
-  }, []);
+  }, [router]); // ✅ Fix missing dependency
 
   return (
     <html lang="en">
@@ -22,3 +22,8 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// ✅ Add PropTypes validation
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};

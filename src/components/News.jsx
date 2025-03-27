@@ -1,5 +1,4 @@
-import React from 'react'
-import Image from 'next/image'
+import Image from "next/image";
 import { PlayCircle } from "lucide-react";
 
 import { FaXTwitter, FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaYoutube } from "react-icons/fa6";
@@ -29,7 +28,7 @@ const News = () => {
             {/* Left Content */}
             <div className="flex flex-col  justify-center mt-6 md:mt-[60px]   ">
             <h1 className="text-2xl font-bold text-gray-900 leading-tight w-fit hover:underline">
-  At least 24 dead in South Korea's 'worst ever fires'
+  At least 24 dead in South Korea&apos;s &apos;worst ever fires&apos;
 </h1>
 
               <p className="text-gray-700 mt-2 text-sm md:text-base">
@@ -100,7 +99,7 @@ const News = () => {
         <Image src="/images/1sec3.png" width={200} height={200} alt="News image" className="rounded-md object-cover transition-transform duration-300 hover:scale-105" />
       </div>
       <h1 className="text-lg font-semibold mt-3 hover:underline">
-        Trump adviser Mike Waltz takes 'full responsibility' for Signal group chat leak
+        Trump adviser Mike Waltz takes &apos;full responsibility&apos; for Signal group chat leak
       </h1>
       <p className="text-sm text-gray-600 mt-1">
         But the US national security adviser said he could not explain how a journalist was added to a chat discussing air strikes in Yemen.
@@ -132,7 +131,7 @@ const News = () => {
         <Image src="/images/1sec5.png" width={200} height={200} alt="News image" className="rounded-md object-cover transition-transform duration-300 hover:scale-105" />
       </div>
       <h1 className="text-lg font-semibold mt-3 hover:underline">
-        South Korea admits to 'mass exporting' children for adoption
+        South Korea admits to &apos;mass exporting&apos; children for adoption
       </h1>
       <p className="text-sm text-gray-600 mt-1">
         A report says the government is guilty of human rights violations in its overseas adoption programme.
@@ -166,7 +165,7 @@ const News = () => {
         JD Vance will join wife in Greenland but trip scaled back
       </h2>
       <p className="text-sm text-gray-600 mt-1">
-        Greenland's leaders have criticised planned visits by US officials after Trump's threats to annex the island.
+        Greenland&apos;s leaders have criticised planned visits by US officials after Trump&apos;s threats to annex the island.
       </p>
       <div className="flex items-center text-gray-500 mt-3 text-xs">
         <p>8 mins ago</p> <span className="mx-2">|</span> <p>US & Canada</p>
@@ -185,7 +184,7 @@ const News = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-[20px]">
   <div className="border border-gray-100 p-2 rounded-md">
     <h1 className="font-semibold text-lg hover:underline">
-      India accused of meddling in Canada's Conservative Party race
+      India accused of meddling in Canada&apos;s Conservative Party race
     </h1>
     <div className="text-sm flex text-gray-600 mt-1">
       <p>13 hrs ago</p>
@@ -207,7 +206,7 @@ const News = () => {
 
   <div className="border border-gray-100 p-2 rounded-md">
     <h1 className="font-semibold text-lg hover:underline">
-      Papua New Guinea blocks Facebook to 'limit' fake news and porn
+      Papua New Guinea blocks Facebook to &apos;limit&apos; fake news and porn
     </h1>
     <div className="text-sm flex text-gray-600 mt-1">
       <p>13 hrs ago</p>
@@ -218,7 +217,7 @@ const News = () => {
 
   <div className="border border-gray-100 p-2 rounded-md">
     <h1 className="font-semibold text-lg hover:underline">
-      Harry quits charity set up in Diana's honour over internal row
+      Harry quits charity set up in Diana&apos;s honour over internal row
     </h1>
     <div className="text-sm flex text-gray-600 mt-1">
       <p>13 hrs ago</p>
@@ -346,7 +345,7 @@ const News = () => {
             className="w-full h-[250px] rounded-md object-cover transition-transform duration-300 hover:scale-105"
           />
           <h1 className="text-lg font-semibold mt-3 hover:underline cursor-pointer leading-tight">
-            How 'free spirit' Raducanu is thriving without full-time coach
+            How &apos;free spirit&apos; Raducanu is thriving without full-time coach
           </h1>
           <p className="text-sm text-gray-600 mt-1 leading-relaxed">
             Emma Raducanu has never been afraid to do things differently. Without a full-time coach, the "free spirit" is thriving in Miami.
@@ -377,10 +376,10 @@ const News = () => {
 
         <div className=" pb-4">
           <h2 className="text-lg font-semibold hover:underline cursor-pointer leading-tight">
-            One historian's 30-year quest to catch a national records thief
+            One historian&apos;s 30-year quest to catch a national records thief
           </h2>
           <p className="text-sm text-gray-600 mt-1 leading-relaxed">
-            One academic's mission to discover who stole 200 items from Scotland's national archives.
+            One academic&apos;s mission to discover who stole 200 items from Scotland&apos;s national archives.
           </p>
           <div className="flex items-center text-gray-500 mt-3 text-xs">
             <p>1 day ago</p>
@@ -441,7 +440,7 @@ const News = () => {
       "Watch: Australian senator wields dead salmon in parliament",
       "Two French air display jets crash in rehearsal",
       "Watch: Historic Buddhist temple burns in South Korea wildfires",
-      "'It shouldn't happen again' - Americans react to Signal group chat leak",
+      "&apos;It shouldn&apos;t happen again&apos; - Americans react to Signal group chat leak",
       "The row over baby wombat grabbed by an influencer... in 60 seconds",
     ].map((item) => (
       <div key={item} className="flex items-start gap-2 w-full md:w-1/5">
@@ -454,7 +453,7 @@ const News = () => {
               "Watch: Australian senator wields dead salmon in parliament",
               "Two French air display jets crash in rehearsal",
               "Watch: Historic Buddhist temple burns in South Korea wildfires",
-              "'It shouldn't happen again' - Americans react to Signal group chat leak",
+              "&apos;It shouldn&apos;t happen again&apos; - Americans react to Signal group chat leak",
               "The row over baby wombat grabbed by an influencer... in 60 seconds",
             ].indexOf(item)
           ]}
@@ -487,7 +486,7 @@ const News = () => {
         {/* Left Content */}
         <div className="flex flex-col justify-center mt-6 md:mt-[60px] w-full md:w-1/2">
           <h1 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight hover:underline">
-            'Embarrassing' Brazil thrashed by Argentina in World Cup qualifying
+            &apos;Embarrassing&apos; Brazil thrashed by Argentina in World Cup qualifying
           </h1>
           <p className="text-gray-700 mt-2 text-sm md:text-base">
             Brazil captain Marquinhos apologises to the fans after an "embarrassing" display in their 4-1 World Cup qualifying defeat to rivals Argentina in Buenos Aires.
@@ -585,7 +584,7 @@ const News = () => {
             />
           </div>
           <h1 className="text-lg font-semibold mt-3 hover:underline">
-            Papua New Guinea blocks Facebook to 'limit' fake news and porn
+            Papua New Guinea blocks Facebook to &apos;limit&apos; fake news and porn
           </h1>
           <p className="text-sm text-gray-600 mt-1">
             The sudden ban has triggered outcry, with critics calling it a violation of human rights.
@@ -610,10 +609,10 @@ const News = () => {
             />
           </div>
           <h1 className="text-lg font-semibold mt-3 hover:underline">
-            India comedian won't apologise for joke that angered politicians
+            India comedian won&apos;t apologise for joke that angered politicians
           </h1>
           <p className="text-sm text-gray-600 mt-1">
-            Kunal Kamra's jokes, which went viral, outraged supporters of Maharashtra leader Eknath Shinde.
+            Kunal Kamra&apos;s jokes, which went viral, outraged supporters of Maharashtra leader Eknath Shinde.
           </p>
           <div className="flex items-center text-gray-500 mt-3 text-xs">
             <p>1 day ago</p>
@@ -670,15 +669,15 @@ const News = () => {
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
     {[
       "Trump has blown up the world order - and left Europe’s leaders scrabbling",
-      "Mike Waltz takes 'full responsibility' for Signal group chat leak",
+      "Mike Waltz takes &apos;full responsibility&apos; for Signal group chat leak",
       "The row that rocked K-pop: NewJeans on courage of speaking out",
-      "At least 24 dead in South Korea's 'worst ever fires'",
+      "At least 24 dead in South Korea&apos;s &apos;worst ever fires&apos;",
       "Russia says sanctions must be lifted before Ukraine maritime ceasefire can start",
       "JD Vance will join wife in Greenland but trip scaled back",
-      "Harry quits charity set up in Diana's honour over internal row",
+      "Harry quits charity set up in Diana&apos;s honour over internal row",
       "Trump signs order aimed at overhauling US elections",
-      "South Korea admits to 'mass exporting' children for adoption",
-      "Hundreds join Gaza's largest anti-Hamas protest since war began",
+      "South Korea admits to &apos;mass exporting&apos; children for adoption",
+      "Hundreds join Gaza&apos;s largest anti-Hamas protest since war began",
     ].map((news, idx) => (
       <div key={news} className="flex items-start gap-2">
         <span className="text-xl font-light text-gray-400">{idx + 1}</span>
@@ -740,7 +739,7 @@ const News = () => {
       {/* Play Button Icon */}
       <PlayCircle className="absolute top-2 left-2 text-white bg-black/50 rounded-full p-1 w-8 h-8 transition-transform duration-300 hover:scale-110" />
     </div>
-    <h1 className="text-sm font-bold hover:underline">What's going on with Brazil?</h1>
+    <h1 className="text-sm font-bold hover:underline">What&apos;s going on with Brazil?</h1>
     <p className="text-gray-700 text-xs">
       South American football writer Tim Vickery analyses what is going wrong for Brazil following their 4-1 defeat by Argentina.
     </p>
@@ -790,7 +789,7 @@ const News = () => {
       />
     </div>
     <h1 className="text-lg font-semibold mt-3 hover:underline">
-      Papua New Guinea blocks Facebook to 'limit' fake news and porn
+      Papua New Guinea blocks Facebook to &apos;limit&apos; fake news and porn
     </h1>
     <p className="text-sm text-gray-600 mt-1">
       The sudden ban has triggered outcry, with critics calling it a violation of human rights.
@@ -814,10 +813,10 @@ const News = () => {
       />
     </div>
     <h1 className="text-lg font-semibold mt-3 hover:underline">
-      Indian comedian won't apologise for joke that angered politicians
+      Indian comedian won&apos;t apologise for joke that angered politicians
     </h1>
     <p className="text-sm text-gray-600 mt-1">
-      Kunal Kamra's jokes, which went viral, outraged supporters of Maharashtra leader Eknath Shinde.
+      Kunal Kamra&apos;s jokes, which went viral, outraged supporters of Maharashtra leader Eknath Shinde.
     </p>
     <div className="flex items-center text-gray-500 mt-3 text-xs">
       <p>1 day ago</p>

@@ -15,7 +15,7 @@ export default function HomePage() {
     } else {
       setIsAuthenticated(true);
     }
-  }, []);
+  }, [router]); // ✅ Add 'router' to dependency array
 
   if (!isAuthenticated) {
     return null; // Prevents rendering before authentication check

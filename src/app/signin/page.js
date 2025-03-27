@@ -16,12 +16,11 @@ const Signin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Simulating authentication (You can replace this with actual authentication logic)
     if (formData.email && formData.password) {
-      localStorage.setItem("isAuthenticated", "true"); // ✅ Store authentication status
-      router.push("/"); // ✅ Redirect to home page
+      localStorage.setItem("isAuthenticated", "true");
+      router.push("/");
     } else {
-      alert("Please enter valid credentials!"); // ✅ Simple validation message
+      alert("Please enter valid credentials!");
     }
   };
 
@@ -37,37 +36,42 @@ const Signin = () => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email Input */}
-          <div className="text-left">
-            <label className="block text-sm">Email or Username</label>
-            <input
-              type="text"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full mt-1 p-2 bg-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-              required
-            />
-          </div>
+          <input
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email or Username"
+            aria-label="Email or Username"
+            className="w-full p-2 bg-gray-900 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-500"
+            required
+          />
 
           {/* Password Input */}
-          <div className="text-left">
-            <label className="block text-sm">Password</label>
-            <div className="relative">
-              <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="w-full mt-1 p-2 bg-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-                required
-              />
-              <span
-                className="absolute right-3 top-3 text-sm cursor-pointer text-blue-500"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? "Hide" : "Show"} password
-              </span>
-            </div>
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              aria-label="Password"
+              className="w-full p-2 bg-gray-900 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-500"
+              required
+            />
+            {/* Show/Hide Password Button (Accessible) */}
+            <button
+              type="button"
+              className="absolute right-3 top-3 text-sm text-blue-500 hover:underline focus:outline-none"
+              onClick={() => setShowPassword(!showPassword)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setShowPassword(!showPassword);
+                }
+              }}
+            >
+              {showPassword ? "Hide" : "Show"} password
+            </button>
           </div>
 
           {/* Sign In Button */}
@@ -88,7 +92,7 @@ const Signin = () => {
 
         {/* Register Section */}
         <hr className="border-gray-600 my-5" />
-        <p className="text-sm">Don't have a News Digest account?</p>
+        <p className="text-sm">Don&apos;t have a News Digest account?</p>
         <Link href="/register" className="text-blue-500 hover:underline font-semibold">
           Register now
         </Link>
