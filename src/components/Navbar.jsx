@@ -1,24 +1,37 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter
 import { FaBars, FaSearch, FaTimes, FaChevronDown } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
+  const router = useRouter(); // Initialize Router
 
   const menuItems = [
     "Home", "News", "Sport", "Business", "Innovation", "Culture", "Arts",
     "Travel", "Earth", "Audio", "Video", "Live"
   ];
 
+  // Function to handle logout
+  const handleLogout = () => {
+    // Perform logout logic (e.g., clearing authentication tokens)
+    localStorage.removeItem("token"); // Example: Remove token if stored in localStorage
+    router.push("/signin"); // Redirect to the sign-in page
+  };
+
   return (
     <>
       {/* Sticky Navbar */}
       <nav className="w-full sticky p-[30px] top-0 left-0 bg-white shadow-md border-b border-gray-300 z-50">
-        <div className=" mx-auto flex items-center justify-between py-4 px-4 md:px-6">
+        <div className="mx-auto flex items-center justify-between py-4 px-4 md:px-6">
           {/* Left - Logo & Hamburger Menu (Mobile) */}
           <div className="flex items-center gap-4">
-            <button onClick={() => setIsOpen(true)} className="text-gray-700 hover:text-black md:hidden">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="text-gray-700 hover:text-black md:hidden"
+              aria-label="Open Menu"
+            >
               <FaBars className="w-6 h-6" />
             </button>
             <h1 className="lg:text-xl text-[20px] font-bold">NEWS DIGEST</h1>
@@ -26,10 +39,15 @@ export default function Navbar() {
 
           {/* Right - Search & Logout */}
           <div className="flex items-center gap-4">
-            <button className="text-gray-700 hover:text-black">
-              <FaSearch className="lg:w-5 lg:h-5 w-[0] " />
+            <button className="text-gray-700 hover:text-black" aria-label="Search">
+              <FaSearch className="lg:w-5 lg:h-5 w-[0]" />
             </button>
-            <button className="bg-black text-white font-semibold px-4 py-2 t-[10px] lg:text-[20px] rounded-md">Logout</button>
+            <button
+              onClick={handleLogout} // Attach the logout function here
+              className="bg-black text-white font-semibold px-4 py-2 t-[10px] lg:text-[20px] rounded-md"
+            >
+              Logout
+            </button>
           </div>
         </div>
 
@@ -46,11 +64,19 @@ export default function Navbar() {
       </nav>
 
       {/* Sidebar Menu (Mobile) */}
-      <div className={`fixed top-0 left-0 h-screen w-80 bg-white shadow-lg transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 z-50 md:hidden`}>
+      <div
+        className={`fixed top-0 left-0 h-screen w-80 bg-white shadow-lg transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 z-50 md:hidden`}
+      >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-xl font-semibold">Menu</h2>
-          <button onClick={() => setIsOpen(false)} className="text-gray-600 hover:text-black">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-gray-600 hover:text-black"
+            aria-label="Close Menu"
+          >
             <FaTimes className="w-6 h-6" />
           </button>
         </div>
@@ -59,9 +85,10 @@ export default function Navbar() {
         <ul className="p-4 space-y-3">
           {menuItems.map((item, index) => (
             <li key={item} className="border-b pb-2">
-              <button 
+              <button
                 className="w-full flex justify-between items-center text-left font-semibold text-gray-700 hover:text-black transition-all"
                 onClick={() => setExpanded(expanded === index ? null : index)}
+                aria-expanded={expanded === index}
               >
                 {item}
                 <FaChevronDown className={`transition-transform ${expanded === index ? "rotate-180" : ""}`} />
@@ -80,9 +107,10 @@ export default function Navbar() {
 
       {/* Background Overlay when Sidebar is Open */}
       {isOpen && (
-        <div 
+        <button
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
+          aria-label="Close Menu"
         />
       )}
     </>

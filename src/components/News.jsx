@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { PlayCircle } from "lucide-react";
-import { FaPlay } from "react-icons/fa";
+
 import { FaXTwitter, FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaYoutube } from "react-icons/fa6";
 
 
@@ -14,10 +14,12 @@ const News = () => {
    
     <div className="lg:p-[50px] p-[30px]">
       {/* NEWS Heading */}         
-      <h1 className="text-4xl font-bold text-red-600 hover:underline relative w-fit">
-        NEWS
-        <span className="block w-0 h-[2px] transition-all duration-300 hover:w-full"></span>
-      </h1>
+      <h1 className="text-4xl font-bold text-red-600 hover:underline w-fit">
+  NEWS
+</h1>
+
+
+
       <hr className="border-t-2 border-black w-full mt-2 mb-6" />
       <div className="px-4 py-6">
      <div className=" gap-8 flex flex-col lg:flex-row">
@@ -26,10 +28,10 @@ const News = () => {
           <div className="flex flex-col md:flex-col lg:flex-row justify-center items-center md:items-start gap-6">
             {/* Left Content */}
             <div className="flex flex-col  justify-center mt-6 md:mt-[60px]   ">
-              <h1 className="text-2xl font-bold text-gray-900 leading-tight relative w-fit hover:underline">
-                At least 24 dead in South Korea's 'worst ever fires'
-                <span className="block w-0 h-[2px]  transition-all duration-300 hover:w-full"></span>
-              </h1>
+            <h1 className="text-2xl font-bold text-gray-900 leading-tight w-fit hover:underline">
+  At least 24 dead in South Korea's 'worst ever fires'
+</h1>
+
               <p className="text-gray-700 mt-2 text-sm md:text-base">
                 The wildfires are threatening cultural sites and "rewriting the record books", according to authorities.
               </p>
@@ -67,9 +69,9 @@ const News = () => {
             <PlayCircle className="absolute top-2 left-2 text-white bg-black/50 rounded-full p-1 w-8 h-8 transition-transform duration-300 hover:scale-110" />
           </div>
           <h1 className="text-sm font-bold relative w-fit hover:underline">
-            Watch: Historic Buddhist temple burns in South Korea wildfires
-            <span className="block w-0 h-[2px] transition-all duration-300 hover:w-full"></span>
-          </h1>
+  Watch: Historic Buddhist temple burns in South Korea wildfires
+</h1>
+
           <p className="text-gray-700 text-xs">
             The wildfires in the country have left dozens dead and caused thousands to evacuate.
           </p>
@@ -253,10 +255,10 @@ const News = () => {
         <div className="flex flex-col md:flex-col lg:flex-row justify-center items-center md:items-start gap-6">
           {/* Left Content */}
           <div className="flex flex-col  justify-center mt-6 md:mt-[60px] ">
-            <h1 className="text-2xl font-bold text-gray-900 leading-tight relative w-fit hover:underline">
-              Hounded and not guilty: A Bollywood media trial blows up in smoke
-              <span className="block w-0 h-[2px] transition-all duration-300 hover:w-full"></span>
-            </h1>
+          <h1 className="text-2xl font-bold text-gray-900 leading-tight relative w-fit hover:underline">
+  Hounded and not guilty: A Bollywood media trial blows up in smoke
+</h1>
+
             <p className="text-gray-700 mt-2 text-sm md:text-base">
               She was called "a gold digger" and "a murderer" after the death of her actor boyfriend Sushant Singh Rajput.
             </p>
@@ -292,9 +294,9 @@ const News = () => {
           />
         </div>
         <h1 className="text-sm font-bold relative w-fit hover:underline">
-          The long, slow road to a ceasefire, with no guarantee of success
-          <span className="block w-0 h-[2px] transition-all duration-300 hover:w-full"></span>
-        </h1>
+  The long, slow road to a ceasefire, with no guarantee of success
+</h1>
+
         <p className="text-gray-700 text-xs">
           The agreement comes after days of talks with the US in Saudi Arabia.
         </p>
@@ -434,17 +436,28 @@ const News = () => {
         Most Watched
       </h2>
       <div className="max-w-7xl mx-auto px-4">
-  <div className="flex flex-col md:flex-row md:justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:justify-between gap-4">
     {[
       "Watch: Australian senator wields dead salmon in parliament",
       "Two French air display jets crash in rehearsal",
       "Watch: Historic Buddhist temple burns in South Korea wildfires",
       "'It shouldn't happen again' - Americans react to Signal group chat leak",
       "The row over baby wombat grabbed by an influencer... in 60 seconds",
-    ].map((item, index) => (
-      <div key={index} className="flex items-start gap-2 w-full md:w-1/5">
+    ].map((item) => (
+      <div key={item} className="flex items-start gap-2 w-full md:w-1/5">
         <span className="text-gray-400 text-lg md:text-[25px] font-bold">
-          {index + 1}
+          {/* Use array index + 1 for numbering */}
+          {[
+            "1", "2", "3", "4", "5"
+          ][
+            [
+              "Watch: Australian senator wields dead salmon in parliament",
+              "Two French air display jets crash in rehearsal",
+              "Watch: Historic Buddhist temple burns in South Korea wildfires",
+              "'It shouldn't happen again' - Americans react to Signal group chat leak",
+              "The row over baby wombat grabbed by an influencer... in 60 seconds",
+            ].indexOf(item)
+          ]}
         </span>
         <p className="text-black font-bold text-sm md:text-base leading-snug">
           <span className="text-black font-bold">▶</span> {item}
@@ -452,6 +465,7 @@ const News = () => {
       </div>
     ))}
   </div>
+
 </div>
 
 
@@ -530,82 +544,85 @@ const News = () => {
       <hr className="border-t border-gray-300 w-full mt-5 mb-6" />
       
       <div className="max-w-7xl mx-auto px-4">
-  <div className="flex flex-col md:flex-row gap-6">
-    {/* Left Section: News Cards */}
-    <div className="flex  justify-center md:justify-start gap-6">
-      {/* News Cards */}
-      {[
-        {
-          img: "/images/5sec1.png",
-          title: "Trump signs order aimed at overhauling US elections",
-          desc: "The executive order would require proof of US citizenship on elections forms among other changes.",
-          time: "11 hrs ago",
-          category: "US & Canada",
-        },
-        {
-          img: "/images/5sec2.png",
-          title: "Papua New Guinea blocks Facebook to 'limit' fake news and porn",
-          desc: "The sudden ban has triggered outcry, with critics calling it a violation of human rights.",
-          time: "10 hrs ago",
-          category: "Asia",
-        },
-        {
-          img: "/images/5sec3.png",
-          title: "India comedian won't apologise for joke that angered politicians",
-          desc: "Kunal Kamra's jokes, which went viral, outraged supporters of Maharashtra leader Eknath Shinde.",
-          time: "1 day ago",
-          category: "Asia",
-        },
-      ].map((news, index) => (
-        <div key={index} className="w-full sm:w-[300px] md:w-[280px] border border-gray-100 p-2 rounded-md">
+      <div className="flex flex-col md:flex-row gap-6">
+      {/* Left Section: News Cards */}
+      <div className="flex justify-center md:justify-start gap-6">
+        {/* News Card 1 */}
+        <div className="w-full sm:w-[300px] md:w-[280px] border border-gray-100 p-2 rounded-md">
           <div className="overflow-hidden rounded-md">
             <Image
-              src={news.img}
+              src="/images/5sec1.png"
               width={450}
               height={350}
               alt="News image"
               className="rounded-md object-cover transition-transform duration-300 hover:scale-105"
+              priority
             />
           </div>
-          <h1 className="text-lg font-semibold mt-3 hover:underline">{news.title}</h1>
-          <p className="text-sm text-gray-600 mt-1">{news.desc}</p>
+          <h1 className="text-lg font-semibold mt-3 hover:underline">
+            Trump signs order aimed at overhauling US elections
+          </h1>
+          <p className="text-sm text-gray-600 mt-1">
+            The executive order would require proof of US citizenship on elections forms among other changes.
+          </p>
           <div className="flex items-center text-gray-500 mt-3 text-xs">
-            <p>{news.time}</p>
+            <p>11 hrs ago</p>
             <span className="mx-2">|</span>
-            <p>{news.category}</p>
+            <p>US & Canada</p>
           </div>
         </div>
-      ))}
-    </div>
 
-    {/* Sidebar Section */}
-    <div className="w-full md:w-[400px]">
-      {[
-        {
-          title: "Japan court dissolves controversial 'Moonies' church",
-          desc: "The Unification Church came under scrutiny after the killing of former PM Shinzo Abe in 2022.",
-          time: "1 day ago",
-          category: "Asia",
-        },
-        {
-          title: "Covid five years on: How BBC journalists covered the crisis in India",
-          desc: "From highways to hospitals and funeral grounds - here's how we covered the pandemic that ravaged India.",
-          time: "1 day ago",
-          category: "Asia",
-        },
-      ].map((news, index) => (
-        <div key={index} className="border border-gray-100 p-2 rounded-md mt-4">
-          <h2 className="text-lg font-bold hover:underline">{news.title}</h2>
-          <p className="text-sm text-gray-600 mt-1">{news.desc}</p>
+        {/* News Card 2 */}
+        <div className="w-full sm:w-[300px] md:w-[280px] border border-gray-100 p-2 rounded-md">
+          <div className="overflow-hidden rounded-md">
+            <Image
+              src="/images/5sec2.png"
+              width={450}
+              height={350}
+              alt="News image"
+              className="rounded-md object-cover transition-transform duration-300 hover:scale-105"
+              priority
+            />
+          </div>
+          <h1 className="text-lg font-semibold mt-3 hover:underline">
+            Papua New Guinea blocks Facebook to 'limit' fake news and porn
+          </h1>
+          <p className="text-sm text-gray-600 mt-1">
+            The sudden ban has triggered outcry, with critics calling it a violation of human rights.
+          </p>
           <div className="flex items-center text-gray-500 mt-3 text-xs">
-            <p>{news.time}</p>
+            <p>10 hrs ago</p>
             <span className="mx-2">|</span>
-            <p>{news.category}</p>
+            <p>Asia</p>
           </div>
         </div>
-      ))}
+
+        {/* News Card 3 */}
+        <div className="w-full sm:w-[300px] md:w-[280px] border border-gray-100 p-2 rounded-md">
+          <div className="overflow-hidden rounded-md">
+            <Image
+              src="/images/5sec3.png"
+              width={450}
+              height={350}
+              alt="News image"
+              className="rounded-md object-cover transition-transform duration-300 hover:scale-105"
+              priority
+            />
+          </div>
+          <h1 className="text-lg font-semibold mt-3 hover:underline">
+            India comedian won't apologise for joke that angered politicians
+          </h1>
+          <p className="text-sm text-gray-600 mt-1">
+            Kunal Kamra's jokes, which went viral, outraged supporters of Maharashtra leader Eknath Shinde.
+          </p>
+          <div className="flex items-center text-gray-500 mt-3 text-xs">
+            <p>1 day ago</p>
+            <span className="mx-2">|</span>
+            <p>Asia</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 
 
@@ -662,14 +679,15 @@ const News = () => {
       "Trump signs order aimed at overhauling US elections",
       "South Korea admits to 'mass exporting' children for adoption",
       "Hundreds join Gaza's largest anti-Hamas protest since war began",
-    ].map((news, index) => (
-      <div key={index} className="flex items-start gap-2">
-        <span className="text-xl font-light text-gray-400">{index + 1}</span>
+    ].map((news, idx) => (
+      <div key={news} className="flex items-start gap-2">
+        <span className="text-xl font-light text-gray-400">{idx + 1}</span>
         <p className="text-sm text-gray-900">{news}</p>
       </div>
     ))}
   </div>
 </div>
+
 
 </div>
 
